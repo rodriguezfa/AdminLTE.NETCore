@@ -1,0 +1,35 @@
+﻿@using AdminLTE.NETCore.Models
+
+@model IEnumerable<ControllerInfo>
+
+@if (Model != null)
+{
+    @foreach (var controller in Model)
+    {
+        @if (controller.ControllerActions != null)
+        {
+            @if (controller.ControllerActions.Count == 1)
+            {
+
+            }
+            else
+            {
+                <li class="treeview">
+                    <a href="#">
+                        <i class="@(controller.DisplayImage)"></i> <span>@controller.DisplayName</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                        @foreach (var action in controller.ControllerActions)
+                        {
+                            <ul class="treeview-menu">
+                                @*<li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" title="@action.DisplayName"><a href="@Url.Action(action.ActionName, controller.ControllerName)"><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>*@
+                                <li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>
+                            </ul>
+                        }
+                    </a>
+                </li>
+            }
+        }
+    }
+}
