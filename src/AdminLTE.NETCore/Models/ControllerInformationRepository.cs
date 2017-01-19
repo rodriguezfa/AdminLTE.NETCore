@@ -49,7 +49,8 @@ namespace AdminLTE.NETCore.Models
                         ControllerActions = a.action_list.Select( act =>  new Models.ActionInfo() {
                         ActionName = act.Name,
                         DisplayName = act.Name.SeparatePascalCase(),
-                        DisplayImage = act.GetCustomAttributes<DisplayImageAttribute>().FirstOrDefault().DisplayImage //Will generate an exception if the attribute is not defined.
+                        DisplayImage = act.GetCustomAttributes<DisplayImageAttribute>().FirstOrDefault().DisplayImage, //Will generate an exception if the attribute is not defined.
+                        ScriptAfterPartialView = act.GetCustomAttributes<ScriptAfterPartialViewAttribute>().FirstOrDefault().ScriptToRun //Will generate an exception if the attribute is not defined.
                         }).ToList()
                     }
             ).ToList();

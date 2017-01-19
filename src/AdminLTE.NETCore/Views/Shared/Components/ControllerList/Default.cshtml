@@ -24,7 +24,7 @@
                         {
                             <ul class="treeview-menu">
                                 @*<li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" title="@action.DisplayName"><a href="@Url.Action(action.ActionName, controller.ControllerName)"><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>*@
-                                <li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>
+                                <li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" scriptToRun="@(action.ScriptAfterPartialView)" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>
                             </ul>
                         }
                     </a>

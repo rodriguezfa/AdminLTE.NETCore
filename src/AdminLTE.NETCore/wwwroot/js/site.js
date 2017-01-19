@@ -42,44 +42,53 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
     if (!$this.hasClass('active')) {
         if (parent_li.hasClass('treeview-menu')) {
             //Clear the body (class="content") section
-            $(".content").empty();
-
-            //TODO: Show some progress bar on the cleared section.
-
-            //Do an ajax call to the controller.
+            //$(".content").empty();            
+            $(".content-wrapper").empty();
+            //TODO: Show some progress bar on the cleared section.            
             //Need to get the controller and parameters for controller from li.
             //window.console.log($this.attr("controllerInfo"))
             var url = $this.attr("controllerInfo"); // "/InternalUsers/Index/";
             //$.post(url, { id: id })
             $.post(url).done(function (response) {
-                $(".content").html(response);
+                $(".content-wrapper").html(response).after(function () {
+                    var scripturl = $this.attr("scriptToRun");
+                    if (scripturl) {
+                        $.getScript(scripturl, function (data, textStatus, jqxhr) {
+                            console.log(data); // Data returned
+                            console.log(textStatus); // Success
+                            console.log(jqxhr.status); // 200
+                            console.log("Load was performed.");
+                        });
+                    }
+                }
+                    );
 
                 //Set that the menu option is now active
                 $this.addClass('active');
 
                 //Update the top menu.
                 //<section class="content-header">
-                $(".content-header").empty();
+                //$(".content-header").empty();
 
-                $(".content-header").html(
-                 '<h1>' +
-                 $this.attr("title") +
-                 '</h1>' +
-                 '<small>' +
-                    //TODO: Write anything small for the header here.
-                 '</small>'
+                //$(".content-header").html(
+                // '<h1>' +
+                // $this.attr("title") +
+                // '</h1>' +
+                // '<small>' +
+                //    //TODO: Write anything small for the header here.
+                // '</small>'
                  //TODO: Add more to display the initial right hand side info.
-                    );                
+                    //);
             });
 
             //Run any defined script here.
-            var url = "/lib/AdminLTE-2.3.11/dist/js/pages/dashboard.js";
-            $.getScript(url, function (data, textStatus, jqxhr) {
-                console.log(data); // Data returned
-                console.log(textStatus); // Success
-                console.log(jqxhr.status); // 200
-                console.log("Load was performed.");
-            });
+            //var url = "/lib/AdminLTE-2.3.11/dist/js/pages/dashboard.js";
+            //$.getScript(url, function (data, textStatus, jqxhr) {
+            //    console.log(data); // Data returned
+            //    console.log(textStatus); // Success
+            //    console.log(jqxhr.status); // 200
+            //    console.log("Load was performed.");
+            //});
 
             //$.ajax({
             //    url: url,
@@ -88,11 +97,11 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
             //    success: success
             //});
 
-            window.console.log("treeview-menu");
+            //window.console.log("treeview-menu");
 
-            function success(queuecounters) {
-                window.console.log("success!");
-            }
+            //function success(queuecounters) {
+            //    window.console.log("success!");
+            //}
 
         }
     };

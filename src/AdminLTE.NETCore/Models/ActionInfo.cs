@@ -10,5 +10,6 @@ namespace AdminLTE.NETCore.Models
         public string ActionName { get; set; }
         public string DisplayName { get; set; }
         public string DisplayImage { get; set; }
+        public string ScriptAfterPartialView { get; set; }
     }
 }

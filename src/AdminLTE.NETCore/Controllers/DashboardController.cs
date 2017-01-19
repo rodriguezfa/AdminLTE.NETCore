@@ -13,6 +13,7 @@ namespace AdminLTE.NETCore.Controllers
     {
         [DisplayActionMenuAttribute]
         [DisplayImageAttribute("fa fa-circle-o")]
+        [ScriptAfterPartialViewAttribute("/lib/AdminLTE-2.3.11/dist/js/pages/dashboard.js")]
         public IActionResult DashboardV1(bool partial = false)
         {
             if (partial)
@@ -23,12 +24,13 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenuAttribute]
         [DisplayImageAttribute("fa fa-circle-o")]
+        [ScriptAfterPartialViewAttribute("/lib/AdminLTE-2.3.11/dist/js/pages/dashboard2.js")]
         public IActionResult DashboardV2(bool partial = false)
         {
             if (partial)
                 return PartialView();
             else
                 return View();
-        }
+        }    
     }
 }

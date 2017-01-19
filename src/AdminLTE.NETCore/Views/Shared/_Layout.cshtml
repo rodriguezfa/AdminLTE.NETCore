@@ -519,7 +519,8 @@
         </aside>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
+            @RenderBody() <!-- Handle each AdminLTE page in a razor view -->
+            @*<!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
                     Dashboard
@@ -534,7 +535,7 @@
             <section class="content">
                 <!-- Your Page Content Here -->
                 @RenderBody() <!-- Removed the content from AdminLTE index.html (FR)-->
-            </section>
+            </section>*@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
