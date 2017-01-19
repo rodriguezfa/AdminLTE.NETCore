@@ -19,5 +19,6 @@ This release is incorporating the version 2.3.11 of the AdminLTE Layout.
 Full implementation into .NET Core is not complete.
 
 Todo List:
-- Figure out how to execute js after loading a partial view.
+- Figure out how to execute js after loading a partial view. (done)
+- Clear previous "active" flag from 'treeview-menu' item
 - Implement the rest of the controllers and actions for pages.
