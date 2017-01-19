@@ -35,6 +35,8 @@
 //    }
 //});
 
+//TODO: Refactor to simplify
+
 $("li[id^='left-sidebar-menu']").on("click", function () {
     var $this = $(this);
     var checkElement = $this.next();
@@ -52,19 +54,30 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
             $.post(url).done(function (response) {
                 $(".content-wrapper").html(response).after(function () {
                     var scripturl = $this.attr("scriptToRun");
+                    //Check if a script is defined for the controller
                     if (scripturl) {
-                        $.getScript(scripturl, function (data, textStatus, jqxhr) {
-                            console.log(data); // Data returned
-                            console.log(textStatus); // Success
-                            console.log(jqxhr.status); // 200
-                            console.log("Load was performed.");
+
+                        //$.getScript(scripturl, function (data, textStatus, jqxhr) {
+                        //    console.log(data); // Data returned
+                        //    console.log(textStatus); // Success
+                        //    console.log(jqxhr.status); // 200
+                        //    console.log("Load was performed.");
+                        //});
+
+                        //Handle multiple scripts.
+                        $.getMultiScripts(scripturl.split(',')).done(function() {
+                            // all scripts loaded
+                            window.console.log('Done loading scripts');
                         });
                     }
                 }
                     );
 
+                //Clear any previous menu option
+                $('.treeview-menu').removeClass('active');
+
                 //Set that the menu option is now active
-                $this.addClass('active');
+                $this.addClass("active");
 
                 //Update the top menu.
                 //<section class="content-header">
@@ -77,8 +90,8 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
                 // '<small>' +
                 //    //TODO: Write anything small for the header here.
                 // '</small>'
-                 //TODO: Add more to display the initial right hand side info.
-                    //);
+                //TODO: Add more to display the initial right hand side info.
+                //);
             });
 
             //Run any defined script here.
@@ -107,6 +120,19 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
     };
 });
 
+
+//http://stackoverflow.com/questions/11803215/how-to-include-multiple-js-files-using-jquery-getscript-method
+$.getMultiScripts = function (arr, path) {
+    var _arr = $.map(arr, function (scr) {
+        return $.getScript((path || "") + scr);
+    });
+
+    _arr.push($.Deferred(function (deferred) {
+        $(deferred.resolve);
+    }));
+
+    return $.when.apply($, _arr);
+}
 
 
 //Get buttons with class ajaxbutton.
