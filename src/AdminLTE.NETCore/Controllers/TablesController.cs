@@ -7,15 +7,15 @@ using AdminLTE.NETCore.Attributes;
 
 namespace AdminLTE.NETCore.Controllers
 {
-    [DisplayOrder(0)]
-    [DisplayImage("fa fa-dashboard")]
-    [TreeView("i", "fa fa-angle-left pull-right", "" )]
-    public class DashboardController : Controller
+    [DisplayOrder(6)]
+    [DisplayImage("fa fa-table")]
+    [TreeView("i", "fa fa-angle-left pull-right", "")]
+    public class TablesController : Controller
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/dist/js/pages/dashboard.js")]
-        public IActionResult DashboardV1(bool partial = false)
+        [ScriptAfterPartialView("")]
+        public IActionResult SimpleTables(bool partial = false)
         {
             if (partial)
                 return PartialView();
@@ -25,13 +25,13 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/chartjs/Chart.min.js,/lib/AdminLTE-2.3.11/dist/js/pages/dashboard2.js")]
-        public IActionResult DashboardV2(bool partial = false)
+        [ScriptAfterPartialView("")]
+        public IActionResult DataTables(bool partial = false)
         {
             if (partial)
                 return PartialView();
             else
                 return View();
-        }    
+        }
     }
 }

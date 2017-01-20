@@ -40,7 +40,8 @@ namespace AdminLTE.NETCore.Models
                 controllerName = CleanupControllerName(d.Name),
                 displayImage = d.GetTypeInfo().GetCustomAttribute<DisplayImageAttribute>(),
                 action_list = d.GetMethods().Where(method => method.IsPublic && method.IsDefined(typeof(DisplayActionMenuAttribute))),
-                treeview = d.GetTypeInfo().GetCustomAttribute<TreeViewAttribute>()
+                treeview = d.GetTypeInfo().GetCustomAttribute<TreeViewAttribute>(),
+                treeviewsettings = d.GetTypeInfo().GetCustomAttribute<TreeViewSettingsAttribute>()
             }
             )
                 .ToList()
@@ -53,6 +54,7 @@ namespace AdminLTE.NETCore.Models
                         DisplayName = a.controllerName.SeparatePascalCase(),
                         DisplayImage = a.displayImage.DisplayImage,
                         TreeViewSettings = a.treeview,
+                        TreeViewSettings2 = a.treeviewsettings,
                         //Actions
                         ControllerActions = a.action_list.Select(act => new Models.ActionInfo()
                         {
@@ -60,7 +62,8 @@ namespace AdminLTE.NETCore.Models
                             DisplayName = act.Name.SeparatePascalCase(),
                             DisplayImage = act.GetCustomAttributes<DisplayImageAttribute>().FirstOrDefault().DisplayImage, //Will generate an exception if the attribute is not defined.
                             ScriptAfterPartialView = act.GetCustomAttributes<ScriptAfterPartialViewAttribute>().FirstOrDefault().ScriptToRun, //Will generate an exception if the attribute is not defined.
-                            TreeViewSettings = act.GetCustomAttributes<TreeViewAttribute>().FirstOrDefault()
+                            TreeViewSettings = act.GetCustomAttributes<TreeViewAttribute>().FirstOrDefault(),
+                            TreeViewSettings2 = act.GetCustomAttributes<TreeViewSettingsAttribute>().FirstOrDefault()
                         }).ToList()
                     }
             ).ToList();

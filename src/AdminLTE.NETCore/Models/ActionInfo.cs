@@ -13,5 +13,6 @@ namespace AdminLTE.NETCore.Models
         public string DisplayImage { get; set; }
         public string ScriptAfterPartialView { get; set; }
         public TreeViewAttribute TreeViewSettings{ get; set; }
+        public TreeViewSettingsAttribute TreeViewSettings2 { get; set; }
     }
 }

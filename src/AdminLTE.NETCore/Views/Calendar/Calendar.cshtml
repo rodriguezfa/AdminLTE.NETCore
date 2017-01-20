@@ -1,0 +1,23 @@
+﻿@using HtmlAgilityPack;
+
+@{
+    HtmlDocument document2 = new HtmlDocument();
+    //TODO: Make the source path more dynamic.
+    //TODO: Refactor this as a tag helper or other
+    document2.Load(new System.IO.MemoryStream(System.IO.File.ReadAllBytes("wwwroot\\lib\\AdminLTE-2.3.11\\pages\\calendar.html")));
+    var root = document2.DocumentNode;
+    var p = root.Descendants()
+    .Where(n => n.GetAttributeValue("class", "").Equals("content-wrapper"))
+    .Single();
+}
+
+@Html.Raw(@p.InnerHtml.Replace("dist/img/", "/lib/AdminLTE-2.3.11/dist/img/"));
+
+@section Scripts {
+    <!-- This is needed for non partial rendering -->
+    <!-- fullCalendar 2.2.5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="~/lib/AdminLTE-2.3.11/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <!-- Page specific script -->
+    <script src="~/js/Calendar.js"></script>
+}

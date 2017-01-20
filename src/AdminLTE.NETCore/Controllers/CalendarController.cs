@@ -7,16 +7,16 @@ using AdminLTE.NETCore.Attributes;
 
 namespace AdminLTE.NETCore.Controllers
 {
-    [DisplayOrder(2)]
+    [DisplayOrder(7)]
     [DisplayImage("")]
-    [TreeViewSettings("small|label pull-right bg-green|new")]
-    public class WidgetsController : Controller
+    [TreeViewSettings("small|label pull-right bg-red|3", "small|label pull-right bg-blue|17")]
+    public class CalendarController : Controller
     {
         [DisplayActionMenu]
-        [DisplayImage("fa fa-th")]
+        [DisplayImage("fa fa-calendar")]
         [ScriptAfterPartialView("")]
-        //[TreeView("", "label pull-right bg-green", "new")]
-        public IActionResult Widgets(bool partial = false)
+        [TreeView("", "label pull-right bg-red", "3")]
+        public IActionResult Calendar(bool partial = false)
         {
             if (partial)
                 return PartialView();

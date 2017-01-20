@@ -14,6 +14,7 @@ namespace AdminLTE.NETCore.Models
         public string ControllerName { get; set; }
         public List<ActionInfo> ControllerActions { get; set; }
         public TreeViewAttribute TreeViewSettings { get; set; }
+        public TreeViewSettingsAttribute TreeViewSettings2 { get; set; }
     }
 
 }

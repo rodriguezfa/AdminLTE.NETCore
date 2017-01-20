@@ -7,16 +7,16 @@ using AdminLTE.NETCore.Attributes;
 
 namespace AdminLTE.NETCore.Controllers
 {
-    [DisplayOrder(1)]
-    [DisplayImage("fa fa-files-o")]
-    //[TreeView("span", "label label-primary pull-right", "4")]
-    [TreeViewSettings("span|label label-primary pull-right|4")]
-    public class LayoutOptionsController : Controller
+    [DisplayOrder(8)]
+    [DisplayImage("fa fa-envelope")]
+    [TreeViewSettings("small|label pull-right bg-yellow|12", "small|label pull-right bg-green|16", "small|label pull-right bg-red|5")]
+    public class MailBoxController : Controller
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
-        public IActionResult TopNavigation(bool partial = false)
+        [TreeView("", "label pull-right bg-red", "3")]
+        public IActionResult Inbox(bool partial = false)
         {
             if (partial)
                 return PartialView();
@@ -27,7 +27,8 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
-        public IActionResult Boxed(bool partial = false)
+        [TreeView("", "label pull-right bg-red", "3")]
+        public IActionResult Compose(bool partial = false)
         {
             if (partial)
                 return PartialView();
@@ -38,18 +39,8 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
-        public IActionResult Fixed(bool partial = false)
-        {
-            if (partial)
-                return PartialView();
-            else
-                return View();
-        }
-
-        [DisplayActionMenu]
-        [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("")]
-        public IActionResult CollapsedSidebar(bool partial = false)
+        [TreeView("", "label pull-right bg-red", "3")]
+        public IActionResult Read(bool partial = false)
         {
             if (partial)
                 return PartialView();

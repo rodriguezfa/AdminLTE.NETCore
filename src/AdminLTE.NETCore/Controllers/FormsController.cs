@@ -7,16 +7,15 @@ using AdminLTE.NETCore.Attributes;
 
 namespace AdminLTE.NETCore.Controllers
 {
-    [DisplayOrder(1)]
-    [DisplayImage("fa fa-files-o")]
-    //[TreeView("span", "label label-primary pull-right", "4")]
-    [TreeViewSettings("span|label label-primary pull-right|4")]
-    public class LayoutOptionsController : Controller
+    [DisplayOrder(5)]
+    [DisplayImage("fa fa-edit")]
+    [TreeView("i", "fa fa-angle-left pull-right", "")]
+    public class FormsController : Controller
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
-        public IActionResult TopNavigation(bool partial = false)
+        public IActionResult GeneralElements(bool partial = false)
         {
             if (partial)
                 return PartialView();
@@ -27,7 +26,7 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
-        public IActionResult Boxed(bool partial = false)
+        public IActionResult AdvancedElements(bool partial = false)
         {
             if (partial)
                 return PartialView();
@@ -38,18 +37,7 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
-        public IActionResult Fixed(bool partial = false)
-        {
-            if (partial)
-                return PartialView();
-            else
-                return View();
-        }
-
-        [DisplayActionMenu]
-        [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("")]
-        public IActionResult CollapsedSidebar(bool partial = false)
+        public IActionResult Editors(bool partial = false)
         {
             if (partial)
                 return PartialView();
