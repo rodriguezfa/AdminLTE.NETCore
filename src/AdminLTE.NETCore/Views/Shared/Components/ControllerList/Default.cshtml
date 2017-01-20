@@ -20,13 +20,14 @@
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
-                        @foreach (var action in controller.ControllerActions)
-                        {
-                            <ul class="treeview-menu">
+                        <ul class="treeview-menu">
+                            @foreach (var action in controller.ControllerActions)
+                            {
                                 @*<li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" title="@action.DisplayName"><a href="@Url.Action(action.ActionName, controller.ControllerName)"><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>*@
-                                <li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" scriptToRun="@(action.ScriptAfterPartialView)" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>
-                            </ul>
-                        }
+                                @*<li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" scriptToRun="@(action.ScriptAfterPartialView)" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>*@
+                                <li id="left-sidebar-menu" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" scriptToRun="@(action.ScriptAfterPartialView)" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>
+                            }
+                        </ul>
                     </a>
                 </li>
             }
