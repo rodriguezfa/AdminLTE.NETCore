@@ -7,8 +7,9 @@ using AdminLTE.NETCore.Attributes;
 
 namespace AdminLTE.NETCore.Controllers
 {
-    [DisplayOrderAttribute(0)]
-    [DisplayImageAttribute("fa fa-dashboard")]
+    [DisplayOrder(0)]
+    [DisplayImage("fa fa-dashboard")]
+    [TreeView("i", "fa fa-angle-left pull-right", "" )]
     public class DashboardController : Controller
     {
         [DisplayActionMenuAttribute]

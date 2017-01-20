@@ -34,7 +34,14 @@ namespace AdminLTE.NETCore.Models
                 }
                 )
             .Select(
-            d => new { fullname = d.FullName, controllerName = CleanupControllerName(d.Name), displayImage = d.GetTypeInfo().GetCustomAttribute<DisplayImageAttribute>(), action_list = d.GetMethods().Where(method => method.IsPublic && method.IsDefined(typeof(DisplayActionMenuAttribute))) }
+            d => new
+            {
+                fullname = d.FullName,
+                controllerName = CleanupControllerName(d.Name),
+                displayImage = d.GetTypeInfo().GetCustomAttribute<DisplayImageAttribute>(),
+                action_list = d.GetMethods().Where(method => method.IsPublic && method.IsDefined(typeof(DisplayActionMenuAttribute))),
+                treeview = d.GetTypeInfo().GetCustomAttribute<TreeViewAttribute>()
+            }
             )
                 .ToList()
                 .Select(
@@ -45,12 +52,15 @@ namespace AdminLTE.NETCore.Models
                         FullName = a.fullname,
                         DisplayName = a.controllerName.SeparatePascalCase(),
                         DisplayImage = a.displayImage.DisplayImage,
+                        TreeViewSettings = a.treeview,
                         //Actions
-                        ControllerActions = a.action_list.Select( act =>  new Models.ActionInfo() {
-                        ActionName = act.Name,
-                        DisplayName = act.Name.SeparatePascalCase(),
-                        DisplayImage = act.GetCustomAttributes<DisplayImageAttribute>().FirstOrDefault().DisplayImage, //Will generate an exception if the attribute is not defined.
-                        ScriptAfterPartialView = act.GetCustomAttributes<ScriptAfterPartialViewAttribute>().FirstOrDefault().ScriptToRun //Will generate an exception if the attribute is not defined.
+                        ControllerActions = a.action_list.Select(act => new Models.ActionInfo()
+                        {
+                            ActionName = act.Name,
+                            DisplayName = act.Name.SeparatePascalCase(),
+                            DisplayImage = act.GetCustomAttributes<DisplayImageAttribute>().FirstOrDefault().DisplayImage, //Will generate an exception if the attribute is not defined.
+                            ScriptAfterPartialView = act.GetCustomAttributes<ScriptAfterPartialViewAttribute>().FirstOrDefault().ScriptToRun, //Will generate an exception if the attribute is not defined.
+                            TreeViewSettings = act.GetCustomAttributes<TreeViewAttribute>().FirstOrDefault()
                         }).ToList()
                     }
             ).ToList();

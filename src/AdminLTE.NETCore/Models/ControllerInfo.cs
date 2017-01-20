@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminLTE.NETCore.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,5 +13,7 @@ namespace AdminLTE.NETCore.Models
         public string DisplayImage { get; set; }
         public string ControllerName { get; set; }
         public List<ActionInfo> ControllerActions { get; set; }
+        public TreeViewAttribute TreeViewSettings { get; set; }
     }
+
 }

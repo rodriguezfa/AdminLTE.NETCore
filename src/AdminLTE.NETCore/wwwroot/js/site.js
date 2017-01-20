@@ -6,8 +6,8 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
     var checkElement = $this.next();
     var parent_li = $this.parent("ul");
     if (!$this.hasClass('active')) {
-        if (parent_li.hasClass('treeview-menu')) {
-
+        //if (parent_li.hasClass('treeview-menu')) { //This limits only to tree items, need to handle no three items.
+        //if (true) {  //This should allow all menu options
             //Clear the section to plug in new content.
             $(".content-wrapper").empty();
 
@@ -34,7 +34,7 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
                 //Set that the menu option is now active
                 $this.addClass("active");
             });
-        }
+        //}
     };
 });
 

@@ -200,10 +200,13 @@ C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Attributes\DisplayAc
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Attributes\DisplayImageAttribute.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Attributes\DisplayOrderAttribute.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Attributes\ScriptAfterPartialViewAttribute.cs
+C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Attributes\TreeViewAttribute.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Common\Ensure.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Common\RegexUtils.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Common\StringExtensions.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Controllers\DashboardController.cs
+C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Controllers\LayoutOptionsController.cs
+C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Controllers\WidgetsController.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Models\ActionInfo.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Models\ControllerInfo.cs
 C:\Development\GITHub\AdminLTE.NETCore\src\AdminLTE.NETCore\Models\ControllerInformationRepository.cs

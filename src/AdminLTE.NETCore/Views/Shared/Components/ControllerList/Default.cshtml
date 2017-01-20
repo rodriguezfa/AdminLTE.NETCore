@@ -10,7 +10,14 @@
         {
             @if (controller.ControllerActions.Count == 1)
             {
-
+                <li id="left-sidebar-menu" controllerInfo="@(controller.ControllerName)/@(controller.ControllerActions[0].ActionName)?partial=true" scriptToRun="@(controller.ControllerActions[0].ScriptAfterPartialView)" title="@controller.ControllerActions[0].DisplayName">
+                    <a>
+                        <i class="@(controller.ControllerActions[0].DisplayImage)"></i> <span>Widgets</span>
+                        <span class="pull-right-container">
+                            <small class="@(controller.ControllerActions[0].TreeViewSettings.ElementClass)">@controller.ControllerActions[0].TreeViewSettings.ElementValue</small>
+                        </span>
+                    </a>
+                </li>
             }
             else
             {
@@ -18,7 +25,8 @@
                     <a href="#">
                         <i class="@(controller.DisplayImage)"></i> <span>@controller.DisplayName</span>
                         <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
+                            @*<i class="fa fa-angle-left pull-right"></i>*@
+                            <controller.TreeViewSettings.ElementType class="@(controller.TreeViewSettings.ElementClass)">@controller.TreeViewSettings.ElementValue</controller.TreeViewSettings.ElementType>
                         </span>
                         <ul class="treeview-menu">
                             @foreach (var action in controller.ControllerActions)
