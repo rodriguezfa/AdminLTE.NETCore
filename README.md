@@ -11,7 +11,7 @@ The goals of this project are:
 - Collaborate with other developers
 
 Project scopre:
-- Use AdminLTE layout to show usage of a custom layout.
+- Use AdminLTE layout to show usage of a custom layout in .NET Core.
 - Present the layout options as partial views for a more responsive user experience.
 
 2017-01-19
@@ -20,5 +20,8 @@ Full implementation into .NET Core is not complete.
 
 Todo List:
 - Figure out how to execute js after loading a partial view. (done)
-- Clear previous "active" flag from 'treeview-menu' item
-- Implement the rest of the controllers and actions for pages.
+- Clear previous "active" flag from 'treeview-menu' item (done)
+- Implement the rest of the controllers and actions for pages (done)
+- Refactor code to clean up redundancies in Razor views
+- Figure out script loading/unload after partial views to avoid conflicts.
+- Fine tune the implementation.
