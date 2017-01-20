@@ -1,0 +1,19 @@
+﻿@using HtmlAgilityPack;
+
+@{
+    HtmlDocument document2 = new HtmlDocument();
+    //TODO: Make the source path more dynamic.
+    //TODO: Refactor this as a tag helper or other
+    document2.Load(new System.IO.MemoryStream(System.IO.File.ReadAllBytes("wwwroot\\lib\\AdminLTE-2.3.11\\pages\\UI\\general.html")));
+    var root = document2.DocumentNode;
+    var p = root.Descendants()
+    .Where(n => n.GetAttributeValue("class", "").Equals("content-wrapper"))
+    .Single();
+}
+
+@Html.Raw(@p.InnerHtml.Replace("dist/img/", "/lib/AdminLTE-2.3.11/dist/img/"));
+
+@section Scripts {
+    <!-- This is needed for non partial rendering -->
+   
+}
