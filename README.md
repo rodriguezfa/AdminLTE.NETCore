@@ -22,6 +22,7 @@ Todo List:
 - Figure out how to execute js after loading a partial view. (done)
 - Clear previous "active" flag from 'treeview-menu' item (done)
 - Implement the rest of the controllers and actions for pages (done)
-- Refactor code to clean up redundancies in Razor views
-- Figure out script loading/unload after partial views to avoid conflicts.
+- Refactor code to clean up redundancies in Razor views (done)
+- Figure out script loading/unload after partial views to avoid conflicts. (scratch this)
+- Load all scripts and css in layout
 - Fine tune the implementation.
