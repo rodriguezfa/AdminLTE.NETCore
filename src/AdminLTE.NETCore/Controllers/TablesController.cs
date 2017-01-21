@@ -25,7 +25,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("")]
+        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/datatables/jquery.dataTables.min.js,/lib/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.min.js,/js/Tables/Datatables.js")]
         public IActionResult DataTables(bool partial = false)
         {
             if (partial)

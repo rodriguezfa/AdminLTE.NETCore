@@ -10,7 +10,7 @@
         {
             @if (controller.ControllerActions.Count == 1)
             {
-                <li id="left-sidebar-menu" controllerInfo="@(controller.ControllerName)/@(controller.ControllerActions[0].ActionName)?partial=true" scriptToRun="@(controller.ControllerActions[0].ScriptAfterPartialView)" title="@controller.ControllerActions[0].DisplayName">
+                <li id="left-sidebar-menu" controllerInfo="/@(controller.ControllerName)/@(controller.ControllerActions[0].ActionName)?partial=true" scriptToRun="@(controller.ControllerActions[0].ScriptAfterPartialView)" title="@controller.ControllerActions[0].DisplayName">
                     <a>
                         <i class="@(controller.ControllerActions[0].DisplayImage)"></i> <span>@controller.ControllerActions[0].DisplayName</span>
                         <span class="pull-right-container">
@@ -50,7 +50,7 @@
                             {
                                 @*<li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" title="@action.DisplayName"><a href="@Url.Action(action.ActionName, controller.ControllerName)"><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>*@
                                 @*<li id="left-sidebar-menu-@(controller.ControllerName.ToLower() + action.ActionName.ToLower() + "-menu")" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" scriptToRun="@(action.ScriptAfterPartialView)" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>*@
-                                <li id="left-sidebar-menu" controllerInfo="@(controller.ControllerName)/@(action.ActionName)?partial=true" scriptToRun="@(action.ScriptAfterPartialView)" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>
+                                <li id="left-sidebar-menu" controllerInfo="/@(controller.ControllerName)/@(action.ActionName)?partial=true" scriptToRun="@(action.ScriptAfterPartialView)" title="@action.DisplayName"><a><i class="@(action.DisplayImage)"></i> @action.DisplayName</a></li>
                                 //TODO: Need to add incos to each li element.
                             }
                         </ul>
