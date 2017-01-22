@@ -67,11 +67,9 @@ namespace AdminLTE.NETCore.TagHelpers
                     .Where(n => n.GetAttributeValue(HtmlAttribute, "").Equals(HtmlAttributeValue))
                     .Single();
 
-
+                    //Make this configurable.
                     var content = p.InnerHtml.Replace("dist/img/", "/lib/AdminLTE-2.3.11/dist/img/");
-
-                   
-
+                  
                     if (!String.IsNullOrEmpty(HtmlReplacement))
                     {
                         try
@@ -90,8 +88,6 @@ namespace AdminLTE.NETCore.TagHelpers
                         }
                     }
 
-                    //Todo: Make reference this cleanup dynamic.
-                    //output.Content.SetHtmlContent(p.InnerHtml.Replace("dist/img/", "/lib/AdminLTE-2.3.11/dist/img/"));
                     output.Content.SetHtmlContent(content);
 
                 }
