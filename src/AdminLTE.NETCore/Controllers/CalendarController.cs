@@ -14,7 +14,7 @@ namespace AdminLTE.NETCore.Controllers
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-calendar")]
-        [ScriptAfterPartialView("")]
+        [ScriptAfterPartialView("/js/Calendar.js")]
         [TreeView("", "label pull-right bg-red", "3")]
         public IActionResult Calendar(bool partial = false)
         {

@@ -14,7 +14,7 @@ namespace AdminLTE.NETCore.Controllers
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/chartjs/Chart.js,/js/ChartJS.js")]
+        [ScriptAfterPartialView("/js/ChartJS.js")]
         public IActionResult ChartJS(bool partial = false)
         {
             if (partial)
@@ -25,7 +25,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/js/Morris.js,/lib/AdminLTE-2.3.11/plugins/morris/morris.min.js,https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js")]
+        [ScriptAfterPartialView("/js/Morris.js")]
         public IActionResult Morris(bool partial = false)
         {
             if (partial)
@@ -36,7 +36,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/flot/jquery.flot.min.js,/lib/AdminLTE-2.3.11/plugins/flot/jquery.flot.resize.min.js,/lib/AdminLTE-2.3.11/plugins/flot/jquery.flot.pie.min.js,/lib/AdminLTE-2.3.11/plugins/flot/jquery.flot.categories.min.js,/js/Flot.js")]
+        [ScriptAfterPartialView("/js/Flot.js")]
         public IActionResult Flot(bool partial = false)
         {
             if (partial)
@@ -47,7 +47,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/knob/jquery.knob.js,/lib/AdminLTE-2.3.11/plugins/sparkline/jquery.sparkline.min.js,/js/Inline.js")]
+        [ScriptAfterPartialView("/js/Inline.js")]
         public IActionResult InlineCharts(bool partial = false)
         {
             if (partial)

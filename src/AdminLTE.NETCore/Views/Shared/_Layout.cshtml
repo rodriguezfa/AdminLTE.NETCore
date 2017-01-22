@@ -43,6 +43,10 @@
 
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.css">
 
+        <!-- fullCalendar 2.2.5-->        
+        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/fullcalendar/fullcalendar.min.css">        
+        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/fullcalendar/fullcalendar.print.css" media="print">
+
         <!-- Theme style -->
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/dist/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -747,15 +751,27 @@
         <script src="~/lib/AdminLTE-2.3.11/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
         <!-- jQuery Knob Chart -->
         <script src="~/lib/AdminLTE-2.3.11/plugins/knob/jquery.knob.js"></script>
+        <!-- Select2 -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/select2/select2.full.min.js"></script>
+        <!-- InputMask -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.js"></script>
+        <script src="~/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+        <script src="~/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.extensions.js"></script>
         <!-- daterangepicker -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
         <script src="~/lib/AdminLTE-2.3.11/plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- bootstrap color picker -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+        <!-- bootstrap time picker -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/timepicker/bootstrap-timepicker.min.js"></script>
         <!-- datepicker -->
         <script src="~/lib/AdminLTE-2.3.11/plugins/datepicker/bootstrap-datepicker.js"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src="~/lib/AdminLTE-2.3.11/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
         <!-- Slimscroll -->
         <script src="~/lib/AdminLTE-2.3.11/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- iCheck 1.0.1 -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/iCheck/icheck.min.js"></script>
         <!-- FastClick -->
         <script src="~/lib/AdminLTE-2.3.11/plugins/fastclick/fastclick.js"></script>
         <!-- AdminLTE App -->
@@ -767,10 +783,15 @@
         <!-- ChartJS 1.0.1 -->
         <script src="~/lib/AdminLTE-2.3.11/plugins/chartjs/Chart.min.js"></script>
 
+        <!-- DataTables -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/lib/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.min.js"></script>
+
         <!-- AdminLTE for demo purposes -->
         <script src="~/lib/AdminLTE-2.3.11/dist/js/demo.js"></script>
 
-
+        <!-- CK Editor -->
+        <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
         <!-- Customizations (FR) -->
         <script src="~/js/site.js"></script>
 
@@ -778,80 +799,23 @@
         @*<script src="~/lib/AdminLTE-2.3.11/plugins/ionslider/ion.rangeSlider.min.js"></script>*@
         <script src="~/lib/ion.rangeSlider/js/ion.rangeSlider.js"></script>
 
-        <!-- Resolve slider function conflict with -->
-        <!-- http://stackoverflow.com/questions/2975793/how-to-deal-with-conflicting-function-names-in-javascript-if-functions-are-from -->
         <!-- Bootstrap slider -->
         @*<script src="~/lib/AdminLTE-2.3.11/plugins/bootstrap-slider/bootstrap-slider.js"></script>*@
         <script src="~/lib/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
 
+        <!-- FLOT CHARTS -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/flot/jquery.flot.min.js"></script>
+        <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/flot/jquery.flot.resize.min.js"></script>
+        <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/flot/jquery.flot.pie.min.js"></script>
+        <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/flot/jquery.flot.categories.min.js"></script>
 
-        <!-- Ui Elements/Sliders script -->
-        @*<script>
-                $(function () {
-                    /* BOOTSTRAP SLIDER */
-                    $('.slider').slider();
-
-                    /* ION SLIDER */
-                    $("#range_1").ionRangeSlider({
-                        min: 0,
-                        max: 5000,
-                        from: 1000,
-                        to: 4000,
-                        type: 'double',
-                        step: 1,
-                        prefix: "$",
-                        prettify: false,
-                        hasGrid: true
-                    });
-                    $("#range_2").ionRangeSlider();
-
-                    $("#range_5").ionRangeSlider({
-                        min: 0,
-                        max: 10,
-                        type: 'single',
-                        step: 0.1,
-                        postfix: " mm",
-                        prettify: false,
-                        hasGrid: true
-                    });
-                    $("#range_6").ionRangeSlider({
-                        min: -50,
-                        max: 50,
-                        from: 0,
-                        type: 'single',
-                        step: 1,
-                        postfix: "°",
-                        prettify: false,
-                        hasGrid: true
-                    });
-
-                    $("#range_4").ionRangeSlider({
-                        type: "single",
-                        step: 100,
-                        postfix: " light years",
-                        from: 55000,
-                        hideMinMax: true,
-                        hideFromTo: false
-                    });
-                    $("#range_3").ionRangeSlider({
-                        type: "double",
-                        postfix: " miles",
-                        step: 10000,
-                        from: 25000000,
-                        to: 35000000,
-                        onChange: function (obj) {
-                            var t = "";
-                            for (var prop in obj) {
-                                t += prop + ": " + obj[prop] + "\r\n";
-                            }
-                            $("#result").html(t);
-                        },
-                        onLoad: function (obj) {
-                            //
-                        }
-                    });
-                });
-            </script>*@
+        <!-- fullCalendar 2.2.5 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+        <script src="~/lib/AdminLTE-2.3.11/plugins/fullcalendar/fullcalendar.min.js"></script>
+         
     </environment>
     <environment names="Staging,Production">
         <!-- Put your production scripts here. -->
