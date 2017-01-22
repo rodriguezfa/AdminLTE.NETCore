@@ -1,6 +1,7 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="js/calendar.js" />
 /// <reference path="js/chartjs.js" />
+/// <reference path="js/examples/pace.js" />
 /// <reference path="js/flot.js" />
 /// <reference path="js/forms/advanced.js" />
 /// <reference path="js/forms/editors.js" />

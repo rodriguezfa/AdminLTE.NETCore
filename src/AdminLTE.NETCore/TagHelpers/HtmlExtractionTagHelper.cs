@@ -40,6 +40,13 @@ namespace AdminLTE.NETCore.TagHelpers
         [HtmlAttributeName("html-attribute-value")]
         public string HtmlAttributeValue { get; set; } = "content-wrapper";
 
+        /// <summary>
+        /// String replacement format {,} where the first element is the value to look for 
+        /// and the second is the value to replace with        
+        /// </summary>
+        [HtmlAttributeName("html-replacement")]
+        public string HtmlReplacement { get; set; }
+
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             //Clear the TagName as it is only used for calling this taghelper
@@ -60,8 +67,33 @@ namespace AdminLTE.NETCore.TagHelpers
                     .Where(n => n.GetAttributeValue(HtmlAttribute, "").Equals(HtmlAttributeValue))
                     .Single();
 
+
+                    var content = p.InnerHtml.Replace("dist/img/", "/lib/AdminLTE-2.3.11/dist/img/");
+
+                   
+
+                    if (!String.IsNullOrEmpty(HtmlReplacement))
+                    {
+                        try
+                        {
+                            //TODO: Need an elegant way to split {},{}... and split the contents with comma.
+                            //Right now only handling one
+                            var splititem = HtmlReplacement.Split('{', '}');
+                            if (splititem != null && splititem.Length > 0)
+                            {
+                                var replacement = splititem[1].Split(',');
+                                content = content.Replace(replacement[0], replacement[1]);
+                            }
+                        }
+                        catch
+                        {
+                        }
+                    }
+
                     //Todo: Make reference this cleanup dynamic.
-                    output.Content.SetHtmlContent(p.InnerHtml.Replace("dist/img/", "/lib/AdminLTE-2.3.11/dist/img/"));
+                    //output.Content.SetHtmlContent(p.InnerHtml.Replace("dist/img/", "/lib/AdminLTE-2.3.11/dist/img/"));
+                    output.Content.SetHtmlContent(content);
+
                 }
                 catch  //Possibly not found or other error
                 { }

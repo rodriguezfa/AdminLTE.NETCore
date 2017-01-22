@@ -14,6 +14,13 @@
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
+
+
+        <!-- Pace style -->
+        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/pace/pace.css">
+        @*<link rel="stylesheet" href="~/lib/pace-1.0.2/themes/blue/pace-theme-flash.css">*@
+
+
         <!-- Ion Slider -->
         @*<link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/ionslider/ion.rangeSlider.css">*@
         <link rel="stylesheet" href="~/lib/ion.rangeSlider/css/ion.rangeSlider.css">
@@ -43,8 +50,8 @@
 
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.css">
 
-        <!-- fullCalendar 2.2.5-->        
-        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/fullcalendar/fullcalendar.min.css">        
+        <!-- fullCalendar 2.2.5-->
+        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/fullcalendar/fullcalendar.min.css">
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/fullcalendar/fullcalendar.print.css" media="print">
 
         <!-- Theme style -->
@@ -52,6 +59,7 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/dist/css/skins/_all-skins.min.css">
+
         <!-- iCheck -->
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/iCheck/flat/blue.css">
         <!-- Morris chart -->
@@ -199,7 +207,7 @@
 
     </environment>
     <environment names="Staging,Production">
-    <!-- Put your production css here. -->
+        <!-- Put your production css here. -->
     </environment>
 </head>
 
@@ -739,6 +747,12 @@
         <script>
             $.widget.bridge('uibutton', $.ui.button);
         </script>
+
+        <!-- PACE -->
+        <script  data-pace-options='{ "ajax": false }' src="~/lib/AdminLTE-2.3.11/plugins/pace/pace.js"></script>
+        @*<script src="~/lib/pace-1.0.2/pace.js"></script>*@
+
+
         <!-- Bootstrap 3.3.6 -->
         <script src="~/lib/AdminLTE-2.3.11/bootstrap/js/bootstrap.min.js"></script>
         <!-- Morris.js charts -->
@@ -815,7 +829,14 @@
         <!-- fullCalendar 2.2.5 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
         <script src="~/lib/AdminLTE-2.3.11/plugins/fullcalendar/fullcalendar.min.js"></script>
-         
+        <!-- Stop pace -->
+        @*<script>
+            $(function () {
+                Pace.stop();
+            });
+            //function () { Pace.restart();
+        </script>*@
+
     </environment>
     <environment names="Staging,Production">
         <!-- Put your production scripts here. -->
