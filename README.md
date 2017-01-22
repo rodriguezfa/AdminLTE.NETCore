@@ -24,5 +24,7 @@ Todo List:
 - Implement the rest of the controllers and actions for pages (done)
 - Refactor code to clean up redundancies in Razor views (done)
 - Figure out script loading/unload after partial views to avoid conflicts. (scratch this)
-- Load all scripts and css in layout
+- Load all scripts and css in layout (partially done)
+  > Need to load the datatables
+  
 - Fine tune the implementation.
