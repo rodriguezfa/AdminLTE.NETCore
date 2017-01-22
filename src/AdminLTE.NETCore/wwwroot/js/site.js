@@ -23,7 +23,7 @@ $("li[id^='left-sidebar-menu']").on("click", function () {
                     $.getMultiScripts(scripturl.split(',')).done(function () {
                         // all scripts loaded
                         window.console.log('Done loading scripts');
-                    }).fail(function (error) {
+                    }).fail(function (jqxhr, settings, exception) { //fail(function (error) {
                         // one or more scripts failed to load
                         window.console.log('One or more scripts failed to load');
                     }).always(function () {

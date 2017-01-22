@@ -1,6 +1,7 @@
 ﻿$(function () {
     /* BOOTSTRAP SLIDER */
-    $('.slider').slider();
+    //$('.slider').slider();
+    $('.slider').bootstrapSlider();
 
     /* ION SLIDER */
     $("#range_1").ionRangeSlider({

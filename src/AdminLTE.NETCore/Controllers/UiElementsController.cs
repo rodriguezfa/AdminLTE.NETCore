@@ -49,7 +49,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImageAttribute("fa fa-circle-o")]
-        [ScriptAfterPartialView("")]
+        [ScriptAfterPartialView("/js/Sliders.js")]
         public IActionResult Sliders(bool partial = false)
         {
             if (partial)

@@ -15,26 +15,30 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
         <!-- Ion Slider -->
-        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/ionslider/ion.rangeSlider.css">
+        @*<link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/ionslider/ion.rangeSlider.css">*@
+        <link rel="stylesheet" href="~/lib/ion.rangeSlider/css/ion.rangeSlider.css">
         <!-- ion slider Nice -->
-        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/ionslider/ion.rangeSlider.skinNice.css">
-        <!-- bootstrap slider -->        
-        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/bootstrap-slider/slider.css">
+        @*<link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/ionslider/ion.rangeSlider.skinNice.css">*@
+        <link rel="stylesheet" href="~/lib/ion.rangeSlider/css/ion.rangeSlider.skinNice.css">
+
+        <!-- bootstrap slider -->
+        @*<link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/bootstrap-slider/slider.css">*@
+        <link rel="stylesheet" href="~/lib/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css">
 
         <!-- daterange picker -->
         @*<link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">*@
         <!-- bootstrap datepicker -->
         @*<link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">*@
-        <!-- iCheck for checkboxes and radio inputs -->        
+        <!-- iCheck for checkboxes and radio inputs -->
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/iCheck/all.css">
 
         <!-- Bootstrap Color Picker -->
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/colorpicker/bootstrap-colorpicker.min.css">
 
         <!-- Bootstrap time Picker -->
-         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/timepicker/bootstrap-timepicker.min.css">
+        <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/timepicker/bootstrap-timepicker.min.css">
 
-        <!-- Select2 -->        
+        <!-- Select2 -->
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/select2/select2.min.css">
 
         <link rel="stylesheet" href="~/lib/AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.css">
@@ -162,9 +166,36 @@
             }
         </style>
 
+        <!-- Sliders -->
+        <style>
+            #red .slider-selection {
+                background: #f56954;
+            }
+
+            #blue .slider-selection {
+                background: #3c8dbc;
+            }
+
+            #green .slider-selection {
+                background: #00a65a;
+            }
+
+            #yellow .slider-selection {
+                background: #f39c12;
+            }
+
+            #aqua .slider-selection {
+                background: #00c0ef;
+            }
+
+            #purple .slider-selection {
+                background: #932ab6;
+            }
+        </style>
+
     </environment>
     <environment names="Staging,Production">
-        <!-- Put your production css here. -->
+    <!-- Put your production css here. -->
     </environment>
 </head>
 
@@ -732,12 +763,95 @@
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         @*<script src="~/lib/AdminLTE-2.3.11/dist/js/pages/dashboard.js" id="toggledashboard"></script>*@
         @*<script src="~/lib/AdminLTE-2.3.11/dist/js/pages/dashboard2.js" id="toggledashboard2"></script>*@
+
+        <!-- ChartJS 1.0.1 -->
+        <script src="~/lib/AdminLTE-2.3.11/plugins/chartjs/Chart.min.js"></script>
+
         <!-- AdminLTE for demo purposes -->
         <script src="~/lib/AdminLTE-2.3.11/dist/js/demo.js"></script>
 
 
         <!-- Customizations (FR) -->
         <script src="~/js/site.js"></script>
+
+        <!-- Ion Slider -->
+        @*<script src="~/lib/AdminLTE-2.3.11/plugins/ionslider/ion.rangeSlider.min.js"></script>*@
+        <script src="~/lib/ion.rangeSlider/js/ion.rangeSlider.js"></script>
+
+        <!-- Resolve slider function conflict with -->
+        <!-- http://stackoverflow.com/questions/2975793/how-to-deal-with-conflicting-function-names-in-javascript-if-functions-are-from -->
+        <!-- Bootstrap slider -->
+        @*<script src="~/lib/AdminLTE-2.3.11/plugins/bootstrap-slider/bootstrap-slider.js"></script>*@
+        <script src="~/lib/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
+
+
+        <!-- Ui Elements/Sliders script -->
+        @*<script>
+                $(function () {
+                    /* BOOTSTRAP SLIDER */
+                    $('.slider').slider();
+
+                    /* ION SLIDER */
+                    $("#range_1").ionRangeSlider({
+                        min: 0,
+                        max: 5000,
+                        from: 1000,
+                        to: 4000,
+                        type: 'double',
+                        step: 1,
+                        prefix: "$",
+                        prettify: false,
+                        hasGrid: true
+                    });
+                    $("#range_2").ionRangeSlider();
+
+                    $("#range_5").ionRangeSlider({
+                        min: 0,
+                        max: 10,
+                        type: 'single',
+                        step: 0.1,
+                        postfix: " mm",
+                        prettify: false,
+                        hasGrid: true
+                    });
+                    $("#range_6").ionRangeSlider({
+                        min: -50,
+                        max: 50,
+                        from: 0,
+                        type: 'single',
+                        step: 1,
+                        postfix: "°",
+                        prettify: false,
+                        hasGrid: true
+                    });
+
+                    $("#range_4").ionRangeSlider({
+                        type: "single",
+                        step: 100,
+                        postfix: " light years",
+                        from: 55000,
+                        hideMinMax: true,
+                        hideFromTo: false
+                    });
+                    $("#range_3").ionRangeSlider({
+                        type: "double",
+                        postfix: " miles",
+                        step: 10000,
+                        from: 25000000,
+                        to: 35000000,
+                        onChange: function (obj) {
+                            var t = "";
+                            for (var prop in obj) {
+                                t += prop + ": " + obj[prop] + "\r\n";
+                            }
+                            $("#result").html(t);
+                        },
+                        onLoad: function (obj) {
+                            //
+                        }
+                    });
+                });
+            </script>*@
     </environment>
     <environment names="Staging,Production">
         <!-- Put your production scripts here. -->

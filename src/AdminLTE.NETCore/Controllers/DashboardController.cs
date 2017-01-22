@@ -25,7 +25,9 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/chartjs/Chart.min.js,/lib/AdminLTE-2.3.11/dist/js/pages/dashboard2.js")]
+        //[ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/chartjs/Chart.min.js,/lib/AdminLTE-2.3.11/dist/js/pages/dashboard2.js")]
+        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/dist/js/pages/dashboard2.js")]
+
         public IActionResult DashboardV2(bool partial = false)
         {
             if (partial)
