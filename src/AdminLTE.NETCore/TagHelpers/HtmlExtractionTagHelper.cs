@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using HtmlAgilityPack;
+using Microsoft.Extensions.Caching.Memory;
+using System.Text.Encodings.Web;
 
 /*
 This TH was written by Francisco Rodriguez
@@ -20,8 +22,16 @@ namespace AdminLTE.NETCore.TagHelpers
     /// TagHelper used to extract section of a local html file.
     /// </summary>
     [HtmlTargetElement("html-extraction")]
-    public class HtmlExtractionTagHelper : TagHelper
+    public class HtmlExtractionTagHelper : TagHelper //Microsoft.AspNetCore.Mvc.TagHelpers.CacheTagHelper //
     {
+        //Not working, need to revisit.
+        //public HtmlExtractionTagHelper(IMemoryCache memoryCache, HtmlEncoder htmlEncoder) : base(memoryCache, htmlEncoder)
+        //{
+        //    //Need to look at making this configurable.
+        //    ExpiresSliding = TimeSpan.FromMinutes(5);
+            
+        //}
+
         /// <summary>
         /// Currently only looking at local html files.
         /// </summary>

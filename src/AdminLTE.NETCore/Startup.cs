@@ -28,6 +28,11 @@ namespace AdminLTE.NETCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //Add Memory Cache
+            //https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory
+            services.AddMemoryCache();
+
             // Add framework services.
             services.AddMvc();
 

@@ -68,7 +68,6 @@ namespace AdminLTE.NETCore.Models
                     }
             ).ToList();
 
-            System.Diagnostics.Debug.Write("");
         }
 
         private string CleanupControllerName(string controllerName)

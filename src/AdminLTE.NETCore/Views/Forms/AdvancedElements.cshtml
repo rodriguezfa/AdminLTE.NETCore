@@ -1,5 +1,7 @@
-﻿
-<html-extraction html-local-path="wwwroot\\lib\\AdminLTE-2.3.11\\pages\\forms\\advanced.html"></html-extraction>
+﻿@*http://www.davepaquette.com/archive/2015/06/03/mvc-6-cache-tag-helper.aspx*@
+<cache expires-sliding="@TimeSpan.FromMinutes(5)">
+    <html-extraction html-local-path="wwwroot\\lib\\AdminLTE-2.3.11\\pages\\forms\\advanced.html"></html-extraction>
+</cache>
 
 @section Scripts {
     <!-- This is needed for non partial rendering -->
@@ -8,12 +10,12 @@
 
     <!-- InputMask -->
     @*<script src="~/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="~/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="~/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>*@
+        <script src="~/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+        <script src="~/lib/AdminLTE-2.3.11/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>*@
 
     <!-- date-range-picker -->
     @*<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-    <script src="~/lib/AdminLTE-2.3.11/plugins/daterangepicker/daterangepicker.js"></script>*@
+        <script src="~/lib/AdminLTE-2.3.11/plugins/daterangepicker/daterangepicker.js"></script>*@
 
     <!-- bootstrap datepicker -->
     @*<script src="~/lib/AdminLTE-2.3.11/plugins/datepicker/bootstrap-datepicker.js"></script>*@
