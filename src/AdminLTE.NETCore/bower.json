@@ -6,6 +6,7 @@
     "jquery": "2.2.0",
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.6",
-    "seiyria-bootstrap-slider": "7.0.3"
+    "seiyria-bootstrap-slider": "7.0.3",
+    "photoswipe": "4.1.1"
   }
 }

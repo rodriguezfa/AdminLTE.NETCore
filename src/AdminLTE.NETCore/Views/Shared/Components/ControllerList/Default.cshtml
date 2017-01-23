@@ -19,8 +19,11 @@
                             {
                                 @foreach (var setting in controller.TreeViewSettings2.TreeViewSettings)
                                 {
-                                    string[] parameters = setting.Split('|'); //TODO: Handle param 0 for the type.                                                                              
-                                    <small class="@(parameters[1])">@parameters[2]</small>
+                                    string[] parameters = setting.Split('|'); //TODO: Handle param 0 for the type.
+                                    if (parameters != null && parameters.Length == 2)
+                                    {
+                                        <small class="@(parameters[1])">@parameters[2]</small>
+                                    }
                                 }
                             }
                         </span>
@@ -36,14 +39,14 @@
                             <i class="fa fa-angle-left pull-right"></i>
                             @*<@controller.TreeViewSettings.ElementType class="@(controller.TreeViewSettings.ElementClass)">
                                 @controller.TreeViewSettings.ElementValue@Html.Raw("</" + controller.TreeViewSettings.ElementType + ">")*@
-                                @if (controller.TreeViewSettings2 != null)
+                            @if (controller.TreeViewSettings2 != null)
+                            {
+                                @foreach (var setting in controller.TreeViewSettings2.TreeViewSettings)
                                 {
-                                    @foreach (var setting in controller.TreeViewSettings2.TreeViewSettings)
-                                    {
-                                        string[] parameters = setting.Split('|'); //TODO: Handle param 0 for the type.
-                                        <small class="@(parameters[1])">@parameters[2] </small>
-                                    }
+                                    string[] parameters = setting.Split('|'); //TODO: Handle param 0 for the type.
+                                    <small class="@(parameters[1])">@parameters[2] </small>
                                 }
+                            }
                         </span>
                         <ul class="treeview-menu">
                             @foreach (var action in controller.ControllerActions)
