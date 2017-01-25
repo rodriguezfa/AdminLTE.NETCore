@@ -1,6 +1,6 @@
 # AdminLTE.NETCore
 Implementation of AdminLTE Layout with ASP.NET Core 1.1 MVC
-Demo can be seen here: http://frodriguez.westus.cloudapp.azure.com/
+Demo can be seen here: https://frodriguez.xyz
 
 For the source of the layout look at here, there is great support there:
 https://github.com/almasaeed2010/AdminLTE
