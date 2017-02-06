@@ -1,0 +1,1 @@
+$(function(){CKEDITOR.replace("editor1");$(".textarea").wysihtml5()});

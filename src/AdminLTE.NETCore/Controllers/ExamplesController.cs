@@ -102,7 +102,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/js/Examples/Pace.js")]
+        [ScriptAfterPartialView("/js/examples/pace.min.js")]
         public IActionResult PacePage(bool partial = false)
         {
             if (partial)

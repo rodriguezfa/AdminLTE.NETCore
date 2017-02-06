@@ -14,7 +14,7 @@ namespace AdminLTE.NETCore.Controllers
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/js/ChartJS.js")]
+        [ScriptAfterPartialView("/js/chartjs.min.js")]
         public IActionResult ChartJS(bool partial = false)
         {
             if (partial)
@@ -25,7 +25,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/js/Morris.js")]
+        [ScriptAfterPartialView("/js/morris.min.js")]
         public IActionResult Morris(bool partial = false)
         {
             if (partial)
@@ -36,7 +36,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/js/Flot.js")]
+        [ScriptAfterPartialView("/js/flot.min.js")]
         public IActionResult Flot(bool partial = false)
         {
             if (partial)
@@ -47,7 +47,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/js/Inline.js")]
+        [ScriptAfterPartialView("/js/inline.min.js")]
         public IActionResult InlineCharts(bool partial = false)
         {
             if (partial)

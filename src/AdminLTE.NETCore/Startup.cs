@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using AdminLTE.NETCore.Models;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
 
 namespace AdminLTE.NETCore
 {
@@ -32,6 +34,14 @@ namespace AdminLTE.NETCore
             //Add Memory Cache
             //https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory
             services.AddMemoryCache();
+
+            services.Configure<GzipCompressionProviderOptions>
+                (options => options.Level = CompressionLevel.Fastest);
+                services.AddResponseCompression(options =>
+                {
+                    options.Providers.Add<GzipCompressionProvider>();
+                });
+
 
             // Add framework services.
             services.AddMvc();
@@ -58,6 +68,8 @@ namespace AdminLTE.NETCore
             }
 
             app.UseStaticFiles();
+
+            app.UseResponseCompression();
 
             app.UseMvc(routes =>
             {

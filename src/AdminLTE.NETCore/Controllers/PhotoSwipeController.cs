@@ -16,7 +16,7 @@ namespace AdminLTE.NETCore.Controllers
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-photo")]
-        [ScriptAfterPartialView("/js/PhotoSwipe/photoswipe.js")]
+        [ScriptAfterPartialView("/js/photoswipe/photoswipe.min.js")]
         [TreeView("", "label pull-right bg-red", "3")]
         public IActionResult PhotoSwipe(bool partial = false)
         {

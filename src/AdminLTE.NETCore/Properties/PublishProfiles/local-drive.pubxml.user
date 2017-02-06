@@ -8,4 +8,45 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\Users\Cisco\Desktop\AdminLTE_Deploy</_PublishTargetUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <File Include="wwwroot/js/Calendar.js">
+      <publishTime>01/20/2017 13:51:52</publishTime>
+    </File>
+    <File Include="wwwroot/js/ChartJS.js">
+      <publishTime>01/19/2017 23:21:38</publishTime>
+    </File>
+    <File Include="wwwroot/js/Examples/Pace.js">
+      <publishTime>01/22/2017 14:16:36</publishTime>
+    </File>
+    <File Include="wwwroot/js/Flot.js">
+      <publishTime>01/20/2017 07:46:01</publishTime>
+    </File>
+    <File Include="wwwroot/js/Forms/Advanced.js">
+      <publishTime>01/21/2017 08:24:56</publishTime>
+    </File>
+    <File Include="wwwroot/js/Forms/Editors.js">
+      <publishTime>01/21/2017 09:50:49</publishTime>
+    </File>
+    <File Include="wwwroot/js/Inline.js">
+      <publishTime>01/20/2017 07:58:22</publishTime>
+    </File>
+    <File Include="wwwroot/js/Morris.js">
+      <publishTime>01/19/2017 23:30:08</publishTime>
+    </File>
+    <File Include="wwwroot/js/PhotoSwipe/PhotoSwipe.js">
+      <publishTime>01/22/2017 18:36:49</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.js">
+      <publishTime>01/22/2017 08:37:09</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.min.js">
+      <publishTime>01/23/2017 09:35:14</publishTime>
+    </File>
+    <File Include="wwwroot/js/Sliders.js">
+      <publishTime>01/22/2017 10:43:29</publishTime>
+    </File>
+    <File Include="wwwroot/js/Tables/Datatables.js">
+      <publishTime>01/21/2017 10:09:22</publishTime>
+    </File>
+  </ItemGroup>
 </Project>

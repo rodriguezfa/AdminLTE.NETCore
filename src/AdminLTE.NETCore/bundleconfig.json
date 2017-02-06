@@ -20,5 +20,174 @@
     },
     // Optinally generate .map file
     "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/examples/pace.min.js",
+    "inputFiles": [
+      "wwwroot/js/examples/pace.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/forms/advanced.min.js",
+    "inputFiles": [
+      "wwwroot/js/forms/advanced.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/forms/editors.min.js",
+    "inputFiles": [
+      "wwwroot/js/forms/editors.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/photoswipe/photoswipe.min.js",
+    "inputFiles": [
+      "wwwroot/js/photoswipe/photoswipe.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/tables/datatables.min.js",
+    "inputFiles": [
+      "wwwroot/js/tables/datatables.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/calendar.min.js",
+    "inputFiles": [
+      "wwwroot/js/calendar.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/chartjs.min.js",
+    "inputFiles": [
+      "wwwroot/js/chartjs.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/flot.min.js",
+    "inputFiles": [
+      "wwwroot/js/flot.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/inline.min.js",
+    "inputFiles": [
+      "wwwroot/js/inline.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/morris.min.js",
+    "inputFiles": [
+      "wwwroot/js/morris.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/sliders.min.js",
+    "inputFiles": [
+      "wwwroot/js/sliders.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/lib/adminlte-2.3.11/dist/js/pages/dashboard.min.js",
+    "inputFiles": [
+      "wwwroot/lib/adminlte-2.3.11/dist/js/pages/dashboard.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/lib/adminlte-2.3.11/dist/js/pages/dashboard2.min.js",
+    "inputFiles": [
+      "wwwroot/lib/adminlte-2.3.11/dist/js/pages/dashboard2.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
   }
 ]
