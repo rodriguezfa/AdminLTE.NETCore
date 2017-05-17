@@ -16,7 +16,7 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
         [TreeView("", "label pull-right bg-red", "3")]
-        public IActionResult Inbox(bool partial = false)
+        public IActionResult InBox(bool partial = false)
         {
             if (partial)
                 return PartialView();

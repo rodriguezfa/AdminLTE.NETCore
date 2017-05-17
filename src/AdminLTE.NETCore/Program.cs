@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,6 +12,7 @@ namespace AdminLTE.NETCore
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
+                //.UseUrls("http://*:5000") // uncomment to make available to the public
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()

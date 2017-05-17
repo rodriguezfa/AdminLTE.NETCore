@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +16,7 @@ namespace AdminLTE.NETCore.Controllers
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-photo")]
-        [ScriptAfterPartialView("/js/photoswipe/photoswipe.min.js")]
+        [ScriptAfterPartialView("/js/PhotoSwipe/photoswipe.min.js")]
         [TreeView("", "label pull-right bg-red", "3")]
         public IActionResult PhotoSwipe(bool partial = false)
         {
