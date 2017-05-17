@@ -61,7 +61,7 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
-        public IActionResult Timeline(bool partial = false)
+        public IActionResult TimeLine(bool partial = false)
         {
             if (partial)
                 return PartialView();

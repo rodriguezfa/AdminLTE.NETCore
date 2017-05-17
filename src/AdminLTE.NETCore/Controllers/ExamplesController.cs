@@ -59,7 +59,7 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         [ScriptAfterPartialView("")]
-        public IActionResult Lockscreen(bool partial = false)
+        public IActionResult LockScreen(bool partial = false)
         {
             if (partial)
                 return PartialView();
@@ -102,7 +102,7 @@ namespace AdminLTE.NETCore.Controllers
 
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/js/examples/pace.min.js")]
+        [ScriptAfterPartialView("/js/Examples/pace.min.js")]
         public IActionResult PacePage(bool partial = false)
         {
             if (partial)

@@ -14,8 +14,8 @@ namespace AdminLTE.NETCore.Controllers
     {
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
-        [ScriptAfterPartialView("/lib/adminLTE-2.3.11/dist/js/pages/dashboard.min.js")]
-        public IActionResult DashboardV1(bool partial = false)
+        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/dist/js/pages/dashboard.min.js")]
+        public IActionResult Dashboardv1(bool partial = false)
         {
             if (partial)
                 return PartialView();
@@ -26,9 +26,9 @@ namespace AdminLTE.NETCore.Controllers
         [DisplayActionMenu]
         [DisplayImage("fa fa-circle-o")]
         //[ScriptAfterPartialView("/lib/AdminLTE-2.3.11/plugins/chartjs/Chart.min.js,/lib/AdminLTE-2.3.11/dist/js/pages/dashboard2.js")]
-        [ScriptAfterPartialView("/lib/adminLTE-2.3.11/dist/js/pages/dashboard2.min.js")]
+        [ScriptAfterPartialView("/lib/AdminLTE-2.3.11/dist/js/pages/dashboard2.min.js")]
 
-        public IActionResult DashboardV2(bool partial = false)
+        public IActionResult Dashboardv2(bool partial = false)
         {
             if (partial)
                 return PartialView();
