@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0EA4A6E3-DDEC-426F-9892-8687F5490A7C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B3151AB9-66A1-48AD-ADEF-3ECB5BFF6B86}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AdminLTE.NETCore", "src\AdminLTE.NETCore\AdminLTE.NETCore.xproj", "{A3D6B92F-4C4D-4345-A912-9B40332B7506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminLTE.NETCore", "src\AdminLTE.NETCore\AdminLTE.NETCore.csproj", "{A3D6B92F-4C4D-4345-A912-9B40332B7506}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,5 +25,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A3D6B92F-4C4D-4345-A912-9B40332B7506} = {0EA4A6E3-DDEC-426F-9892-8687F5490A7C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76350609-CA3C-4441-804A-FA4A59D5D5DE}
 	EndGlobalSection
 EndGlobal
