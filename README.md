@@ -1,5 +1,5 @@
 # AdminLTE.NETCore
-Implementation of AdminLTE Layout with ASP.NET Core 2.0 MVC in VS2017
+Implementation of AdminLTE Layout with ASP.NET Core 3.0 MVC in VS2019
 
 For the source of the layout look at here, there is great support there:
 https://github.com/almasaeed2010/AdminLTE
@@ -27,11 +27,11 @@ Todo List:
 - Fine tune the implementation.
 
 How to use:
-Download and install .NET Core 2.0
+Download and install .NET Core 3.0
 - https://www.microsoft.com/net/download/windows
 
 Download this package and place in a folder of your choice.
 
-Open in Visual Studio 2017 and Run.
+Open in Visual Studio 2019 and Run.
 
-Note: I am using Visual Studio 2017 but I understand that you can write code with different tools.
+Note: I am using Visual Studio 2019 but I understand that you can write code with different tools.
