@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 using System.IO.Compression;
 
 namespace AdminLTE.NETCore
@@ -28,45 +28,46 @@ namespace AdminLTE.NETCore
 
             services.Configure<GzipCompressionProviderOptions>
                 (options => options.Level = CompressionLevel.Fastest);
-                services.AddResponseCompression(options =>
-                {
-                    options.Providers.Add<GzipCompressionProvider>();
-                });
-
-
-            // Add framework services.
-            services.AddMvc();
-
+            services.AddResponseCompression(options =>
+            {
+                options.Providers.Add<GzipCompressionProvider>();
+            });
+            
             //Add the ControllerInformationRepository
             services.AddSingleton<IControllerInformationRepository, ControllerInformationRepository>();
 
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
-        {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error"); //Need to provide a replacement.
-            }
-
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {            
             app.UseStaticFiles();
 
             app.UseResponseCompression();
-
-            app.UseMvc(routes =>
+                        
+            if (env.IsDevelopment())
             {
-                routes.MapRoute(
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Dashboard}/{action=Dashboardv1}/{id?}");
+                    pattern: "{controller=Dashboard}/{action=Dashboardv1}/{id?}");
             });
         }
     }

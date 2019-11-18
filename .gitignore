@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs
+/src/AdminLTE.NETCore/obj/AdminLTE.NETCore.csproj.nuget.dgspec.json
+/src/AdminLTE.NETCore/obj/Debug/netcoreapp3.0
